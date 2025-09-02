@@ -51,6 +51,11 @@ h1 {
 	line-height: 3.25rem;
 	font-family: "Poppins"
 }
+ .logo-image img {
+	width: 100px;
+	height: 50px;
+	border-radius: 50%;
+}
 
 h2 {
 	color: #24262a;
@@ -521,7 +526,7 @@ input[type='checkbox'] {
 .header {
 	padding-top: 7rem;
 	padding-bottom: 5.5rem;
-	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/header-background.jpg') center center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/sudip.jpg') center center no-repeat;
 	background-size: cover;
 	text-align: center;
 }
