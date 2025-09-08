@@ -523,32 +523,70 @@ input[type='checkbox'] {
 /******************/
 /*     Header     */
 /******************/
-/* ===== NAV HEIGHT (adjust if your navbar is taller/shorter) ===== */
-:root { --navH: 64px; }
+/* ========= HERO LAYOUT (removes big top gap) ========= */
+:root { --navH: 56px; }  /* adjust if your fixed navbar is taller */
 
-/* ===== HEADER / HERO ===== */
-/* HERO should be full screen height */
-.header {
-  min-height: 100vh;                 /* full screen */
-  background: #24262a;
-  color: #fff;
-  margin: 0;
-  padding: 0;                        /* remove extra padding */
-  display: flex;
-  align-items: center;               /* center content vertically */
+.header{
+  margin:0;
+  padding-top: var(--navH);                 /* clear the fixed navbar */
+  padding-bottom: 0;
+  min-height: calc(100vh - var(--navH));    /* exact viewport height */
+  background:#24262a;
+  color:#fff;
+  display:flex;
+  align-items:center;                        /* vertical center */
 }
 
-/* Make row also take full height */
-.header .row {
-  flex: 1;
-  align-items: center;               /* vertical center */
+.header .row{ flex:1; align-items:center; }
+.header .text-container{ max-width:720px; padding:2rem; }
+
+.header-img-container{ display:flex; align-items:center; justify-content:center; padding:0; }
+
+/* Fit image INSIDE a rectangle (no stretching) */
+.header-photo{
+  max-width:100%;
+  max-height:400px;          /* tweak rectangle height if you want */
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
-/* Text block */
-.header .text-container {
-  max-width: 720px;
-  padding: 2rem;                     /* reduce padding */
+/* Keep navbar transparent over hero */
+.navbar{ background-color:transparent; box-shadow:none; }
+
+/* Kill old template paddings that created huge gaps */
+@media (min-width:768px){  .header{ padding-top: var(--navH); padding-bottom:0; } }
+@media (min-width:992px){  .header{ padding-top: var(--navH); padding-bottom:0; } }
+@media (min-width:1200px){ .header{ padding-top: var(--navH); padding-bottom:0; } }
+
+/* Mobile tweaks */
+@media (max-width:991.98px){
+  .header{ min-height:auto; }
+  .header .text-container{ text-align:center; padding:3rem 1.5rem; }
 }
+
+/* ========= Typing animation styles ========= */
+.animated-text{
+  font-size:1.5rem;
+  font-weight:500;
+  color:#ffffff;
+  margin-bottom:1rem;
+  min-height:30px;           /* reserve space */
+}
+#typing{
+  border-right:2px solid #ffffff;
+  white-space:nowrap;
+  overflow:hidden;
+  display:inline-block;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0%,100%{ border-color: transparent; }
+  50%{    border-color: #ffffff; }
+}
+
 
 /* Right image container */
 .header-img-container {

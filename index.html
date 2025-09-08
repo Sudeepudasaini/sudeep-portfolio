@@ -83,7 +83,6 @@
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-
 <header id="header" class="header">
   <div class="container-fluid p-0">
     <div class="row no-gutters align-items-stretch">
@@ -91,21 +90,26 @@
       <!-- LEFT: text -->
       <div class="col-lg-6 d-flex">
         <div class="text-container my-auto px-5 px-lg-5">
-          <h1 class="h1-large">My works,projects and about me!</h1>
+          <div class="animated-text"><span id="typing"></span></div>
+          <!-- keep only ONE H1 -->
+          <h1 class="h1-large">My works, projects and about me!</h1>
+
           <a class="btn-solid-lg page-scroll" href="#about">Discover</a>
-          <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a>
+          <a class="btn-outline-lg page-scroll" href="#contact">
+            <i class="fas fa-user"></i>Contact Me
+          </a>
         </div>
       </div>
 
-      <!-- RIGHT: image fills the column -->
+      <!-- RIGHT: image -->
       <div class="col-lg-6 header-img-container">
-  <img src="images/sudeep2.jpg" alt="Sudeep Pudasaini" class="header-photo">
-</div>
-
+        <img src="images/sudeep2.jpg" alt="Sudeep Pudasaini" class="header-photo">
+      </div>
 
     </div>
   </div>
 </header>
+
 
 
 
@@ -117,6 +121,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="text-container first">
+
                         <h2>Hi there I'm Sudeep,</h2>
                         <p>And I love to create beautiful and efficient websites for my customers. I love going through the entire process with the customer from concept, to design and then development and launch</p>
                     </div> <!-- end of text-container -->
@@ -603,6 +608,22 @@
     
     	
     <!-- Scripts -->
+     <script>
+  const text = "I am eager to learn many more things of IT World.....";
+  const typing = document.getElementById("typing");
+
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      typing.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100); // speed (ms)
+    }
+  }
+
+  window.onload = typeWriter;
+</script>
+
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
