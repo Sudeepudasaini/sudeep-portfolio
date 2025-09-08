@@ -524,12 +524,26 @@ input[type='checkbox'] {
 /*     Header     */
 /******************/
 .header {
-	padding-top: 7rem;
-	padding-bottom: 5.5rem;
-	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/sudip.jpg') center center no-repeat;
-	background-size: cover;
-	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7rem 5rem;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    color: #fff;
 }
+
+.header-content {
+    flex: 1;
+    text-align: left;
+}
+
+.header img {
+    flex: 1;
+    max-width: 450px;  /* adjust size */
+    border-radius: 15px; /* optional rounded corners */
+    object-fit: cover;
+}
+
 
 .header .h1-large {
 	margin-bottom: 1.75rem;
