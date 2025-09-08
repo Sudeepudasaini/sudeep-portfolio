@@ -523,26 +523,71 @@ input[type='checkbox'] {
 /******************/
 /*     Header     */
 /******************/
+/* ===== NAV HEIGHT (adjust if your navbar is taller/shorter) ===== */
+:root { --navH: 64px; }
+
+/* ===== HEADER / HERO ===== */
+/* HERO should be full screen height */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7rem 5rem;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
-    color: #fff;
+  min-height: 100vh;                 /* full screen */
+  background: #24262a;
+  color: #fff;
+  margin: 0;
+  padding: 0;                        /* remove extra padding */
+  display: flex;
+  align-items: center;               /* center content vertically */
 }
 
-.header-content {
-    flex: 1;
-    text-align: left;
+/* Make row also take full height */
+.header .row {
+  flex: 1;
+  align-items: center;               /* vertical center */
 }
 
-.header img {
-    flex: 1;
-    max-width: 450px;  /* adjust size */
-    border-radius: 15px; /* optional rounded corners */
-    object-fit: cover;
+/* Text block */
+.header .text-container {
+  max-width: 720px;
+  padding: 2rem;                     /* reduce padding */
 }
+
+/* Right image container */
+.header-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* Image neatly inside */
+.header-photo {
+  max-width: 100%;
+  max-height: 400px;                 /* rectangle height */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* Desktop navbar look (optional) */
+.navbar {
+  background-color: transparent; /* overlay on hero */
+  box-shadow: none;
+}
+
+/* On scroll (if you add a 'top-nav-collapse' class in JS), you can darken it
+.navbar.top-nav-collapse { background-color: #24262a; }
+*/
+
+/* Mobile tweaks */
+@media (max-width: 991.98px) {
+  .header { min-height: auto; padding-top: var(--navH); }
+  .header .text-container { text-align: center; padding: 3rem 1.5rem; }
+}
+
+
+
 
 
 .header .h1-large {
